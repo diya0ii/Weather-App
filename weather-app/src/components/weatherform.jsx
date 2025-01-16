@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import weatherlogo from '../assets/weatherlogo.svg'; 
 
 const WeatherForm = () => {
     const[city,setCity] = useState("")
@@ -14,7 +15,6 @@ const WeatherForm = () => {
             if(response.ok){
                 setWeather(data);
                 setError(null);
-
             }
             else {
                 setWeather(null);
@@ -26,8 +26,11 @@ const WeatherForm = () => {
         }
     };
     return(
-        <div className="p-4 max-w-md mx-auto my-auto bg-white rounded-lg shadow">
-            <h1 className="text-2xl font-bold mb-4"> Weather App</h1>
+        <div className="bg-white rounded-lg shadow-md p-6 mx-auto my-auto text-center block m-auto">
+            <a>
+                <img src={weatherlogo} className="logo" alt="weather logo" />
+            </a>
+            <h1 className="text-2xl font-bold mb-4 text-yellow-950"> Weather App</h1>
             <input
             type="text"
             value={city}
